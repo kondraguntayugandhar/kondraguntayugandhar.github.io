@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .header-bar {
+            background-color: #333;
+    color: white;
+    padding: 40px;
+    background-image: url('https://example.com/path/to/your-image.jpg');
+    background-size: cover;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+    text-decoration: underline;
+}
+h2 {
+    margin: 10px 0 0;
+    font-size: 15px;
+    color: rgb(165, 213, 219);
+    display: block;
+        }
+        .header-left {
+    display: flex;
+    flex-direction: column; 
+}
+.footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-nav li {
+    margin: 0 15px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+        .header-cont h1 {
+            color: rgb(165, 213, 219);
+            text-align: center; 
+            font-weight: bold;
+            margin: 0;
+}
+h3 {
+    margin: 0;
+    font-size: 40px;
+    text-decoration:none;
+    color: #333;
+}
+        .franchise-form {
+            margin-top: 25px;
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* Set the form width to 600px */
+            margin-left: auto; /* Center the form */
+            margin-right: auto; /* Center the form */
+        }
+        .franchise-form input[type="text"],
+        .franchise-form input[type="email"],
+        .franchise-form input[type="tel"],
+        .franchise-form input[type="file"],
+        .franchise-form textarea,
+        .franchise-form select {
+            width: 100%; 
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+            font-size: 16px; /* Adjust font size for uniform look */
+        }
+        .franchise-form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .franchise-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="header-container">
+            <div class="header-left">
+            <h1>FRANCHISE</h1>
+            <h2>COLLABORATE WITH US!</h2>
+        </div>
+            <ul class="footer-nav">
+                <li><a href="fran.html">Home</a></li>
+                <li><a href="franc1.html">Book Franchise</a></li>
+                <li><a href="franc2.html">Add Franchise</a></li>
+                <li><a href="#account">My profile</a></li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="franchise-form">
+        <h3>Submit Franchise Details</h3>
+        <input type="text" id="franchise-name" placeholder="Enter franchise name" required>
+        <select id="franchise-type" required>
+            <option value="" disabled selected>Select type of franchise</option>
+            <option value="Food">Food</option>
+            <option value="Retail">Retail</option>
+            <option value="Service">Service</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Other">Other</option>
+        </select>
+        <textarea id="franchise-details" placeholder="Enter details of the franchise" rows="4" required></textarea>
+        <input type="file" id="franchise-image" accept="image/*" required>
+        <select id="location" required>
+            <option value="" disabled selected>Enter your location</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+        </select>
+        <input type="text" id="price" placeholder="Franchise price" required>
+        <input type="text" id="manager-name" placeholder="Enter manager name" required>
+        <input type="tel" id="contact-number" placeholder="Enter contact number" required>
+        <input type="email" id="franchise-email" placeholder="Enter email address" required>
+        <button onclick="addFranchise()">Submit</button>
+    </div>
+
+    <script>
+    function addFranchise() {
+    const name = document.getElementById('franchise-name').value;
+    const email = document.getElementById('franchise-email').value;
+    const managerName = document.getElementById('manager-name').value;
+    const contactNumber = document.getElementById('contact-number').value;
+    const details = document.getElementById('franchise-details').value;
+    const type = document.getElementById('franchise-type').value;
+    const price = document.getElementById('price').value;
+    const location = document.getElementById('location').value;
+    const image = document.getElementById('franchise-image').files[0];
+    
+    if (!name || !email || !managerName || !contactNumber || !details || !type || !location || !image|| !price) {
+        alert("Please fill all the details including location and image.");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const imageSrc = e.target.result;
+
+        // Store franchise data in local storage
+        const franchiseData = {
+            name,
+            email,
+            managerName,
+            contactNumber,
+            details,
+            type,
+            price,
+            location,
+            imageSrc
+        };
+        localStorage.setItem('franchiseData', JSON.stringify(franchiseData));
+
+        // Redirect to the details page
+        window.location.href = 'franc1.html';
+    };
+
+    reader.readAsDataURL(image);
+}
+
+    </script>
+</body>
+</html>

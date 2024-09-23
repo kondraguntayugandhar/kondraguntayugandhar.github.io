@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Mobile Number and OTP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Center the form vertically */
+            background-color: #f5f5f5; /* Light background for contrast */
+        }
+
+        .header-bar {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Add padding to header */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .footer-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .footer-nav li {
+            margin: 0 15px;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #login {
+            width: 400px; /* Set the width */
+            height: 500px; /* Set the height */
+            background-color: white; /* White background for the box */
+            border: 1px solid #ccc; /* Light border */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            padding: 20px; /* Inner padding */
+            border-radius: 8px; /* Rounded corners */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: stretch; /* Stretch items to full width */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Make form take full width */
+        }
+
+        form label {
+            margin: 10px 0 5px;
+        }
+
+        form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc; /* Add border to inputs */
+            border-radius: 4px; /* Rounded corners for inputs */
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px; /* Rounded corners for buttons */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="header-container">
+            <h1>FRANCHISE</h1>
+            <nav>
+                <ul class="footer-nav">
+                    <li><a href="fran.html">Home</a></li>
+                    <li><a href="franc1.html">Book Franchise</a></li>
+                    <li><a href="franc2.html">Add Franchise</a></li>
+                    <li><a href="franc5.html">My Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <section id="login">
+            <h2>Login with Mobile Number</h2>
+            <form id="login-form" action="dashboard.html" method="POST">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+
+                <button type="button" id="send-otp">Send OTP</button>
+
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" name="otp" required>
+
+                <button type="submit">Login</button>
+                <p><a href="forgot-password.html">Forgot Password?</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
+
+    <script>
+        document.getElementById('send-otp').addEventListener('click', function() {
+            const mobileNumber = document.getElementById('mobile').value;
+            // Simulate sending OTP
+            alert(`OTP sent to ${mobileNumber}`);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Franchise Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .header-bar {
+            background-color: #333;
+    color: white;
+    padding: 40px;
+    background-image: url('https://example.com/path/to/your-image.jpg');
+    background-size: cover;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+    text-decoration: underline;
+}
+h2 {
+    margin: 10px 0 0;
+    font-size: 15px;
+    color: rgb(165, 213, 219);
+    display: block;
+        }
+        .header-left {
+    display: flex;
+    flex-direction: column; 
+}
+.footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-nav li {
+    margin: 0 15px;
+}
+
+.footer-nav a {
+    color: rgb(10, 9, 9);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+        .details-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .details-box img {
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            align-self: center;
+        }
+        .details-box h3 {
+            color: #333;
+        }
+        .details-box p {
+            color: #333;
+            line-height: 1.6;
+        }.book-now-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            max-width: 200px; /* Set your desired max width here */
+            width: 100%; 
+            box-sizing: border-box;
+        }
+        .book-now-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar"></div>
+        <div class="header-container">
+            <div class="header-left">
+            <h1>FRANCHISE</h1>
+            <h2>COLLABORATE WITH US!</h2>
+        </div>
+            <ul class="footer-nav">
+                <li><a href="fran.html">Home</a></li>
+                <li><a href="franc1.html">Book Franchise</a></li>
+                <li><a href="franc2.html">Add Franchise</a></li>
+                <li><a href="#account">My profile</a></li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="details-box" id="details-box">
+        <img id="franchise-image" src="" alt="Franchise Image">
+        <h3 id="franchise-name"></h3>
+        <p id="franchise-type"></p>
+        <p id="franchise-location"></p>
+        <p id="franchise-manager"></p>
+        <p id="franchise-contact"></p>
+        <p id="franchise-email"></p>
+        <p id="franchise-details"></p>
+        <p id="franchise-price"></p>
+        <a href="booking.html" class="book-now-button">Book Now</a>
+    </div>
+
+    <script>
+
+        const franchiseData = JSON.parse(localStorage.getItem('franchiseData'));
+
+        if (franchiseData) {
+            document.getElementById('franchise-image').src = franchiseData.imageSrc;
+            document.getElementById('franchise-name').innerText = franchiseData.name;
+            document.getElementById('franchise-type').innerText = `Type: ${franchiseData.type}`;
+            document.getElementById('franchise-location').innerText = `Location: ${franchiseData.location}`;
+            document.getElementById('franchise-price').innerText = `price: ${franchiseData.price}`;
+            document.getElementById('franchise-manager').innerText = `Manager: ${franchiseData.managerName}`;
+            document.getElementById('franchise-contact').innerText = `Contact: ${franchiseData.contactNumber}`;
+            document.getElementById('franchise-email').innerText = `Email: ${franchiseData.email}`;
+            document.getElementById('franchise-details').innerText = `Details: ${franchiseData.details}`;
+        } else {
+            document.body.innerHTML = '<p>No franchise details available.</p>';
+        }
+    </script>
+</body>
+</html>

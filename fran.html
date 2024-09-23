@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMV0aENz6zrtt2zgh1rS/1K1bf7bLdV0YPi6Yr6" crossorigin="anonymous">
+    <style>
+        /* Your existing CSS styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .header-bar {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-image: url('https://example.com/path/to/your-image.jpg');
+            background-size: cover;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+        .footer-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .footer-nav li {
+            margin: 0 15px;
+        }
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .footer-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80vh;
+            padding: 20px;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            flex-basis: 50%;
+        }
+        .promotion-button, .demand-button {
+            font-size: 70px;
+            text-align: center;
+            border: 2px solid #1a1818;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 500px;
+            height: 200px;
+            margin: 25px 0;
+            padding-top: 40px;
+            text-decoration: none;
+            background-size: cover;
+            background-position: center;
+            color: rgb(44, 212, 29);
+            font-weight: bold;
+            opacity: 0.9;
+        }
+        .promotion-button {
+            background-image: url('C:/Users/yugan/Downloads/wa.jpg');
+        }
+        .demand-button {
+            background-image: url('C:/Users/yugan/Downloads/wa2.avif');
+        }
+        .promotion-button:hover, .demand-button:hover {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .image-container {
+            position: right;
+            width: 600px;
+            height: 800px;
+            background-image: url('https://your-server-path/Fraw.jpg');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+        }
+        .trending-franchise {
+            margin: 50px;
+            padding: 20px;
+            background-color: #e0f7fa;
+            border: 1px solid #00acc1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .trending-franchise h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #00796b;
+        }
+        .franchise-boxes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .franchise-box {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .franchise-box img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+        }
+        .franchise-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .franchise-box p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .info-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #d5dfdf;
+            text-align: center;
+        }
+        .info-box .section {
+            flex: 1 1 20%;
+            min-width: 200px;
+            box-sizing: border-box;
+        }
+        .info-box .section h2 {
+            margin-bottom: 10px;
+        }
+        .info-box .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .info-box .section li {
+            margin-bottom: 10px;
+        }
+        .info-box .section a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .info-box .section a:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="header-container">
+            <h1>FRANCHISE</h1>
+            <ul class="footer-nav">
+                <li><a href="fran.html">Home</a></li>
+                <li><a href="franc1.html">Book Franchise</a></li>
+                <li><a href="franc2.html">Add Franchise</a></li>
+                <li><a href="franc5.html">My profile</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="button-container">
+            <a href="franc4.html" class="promotion-button">SET YOUR GOAL @1.4L</a>
+            <a href="demand.html" class="demand-button">25% OFF</a>
+        </div>
+        <div class="image-container">
+            <img src="C:/Users/yugan/Pictures/Fraw.jpg" alt="Franchise Image">
+        </div>
+    </div>
+
+    <div class="trending-franchise">
+        <h2>Most Trending Franchise</h2>
+        <div class="franchise-boxes" id="trending-franchises">
+            <!-- Trending franchises will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="section support">
+            <h2>Support</h2>
+            <ul>
+                <li><a href="#">Franchise service Centers</a></li>
+                <li><a href="#">Contact Customer Service</a></li>
+                <li><a href="#">Safety Resource Center</a></li>
+            </ul>
+        </div>
+        <div class="section discover">
+            <h2>Insurance</h2>
+            <ul>
+                <li><a href="#">Tata Insurance</a></li>
+                <li><a href="#">Bajaj Insurance</a></li>
+                <li><a href="#">Yuvi Insurance</a></li>
+            </ul>
+        </div>
+        <div class="section terms">
+            <h2>Terms and Settings</h2>
+            <ul>
+                <li><a href="#">Privacy & Cookies</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Human Rights Statement</a></li>
+            </ul>
+        </div>
+        <div class="section partners">
+            <h2>Partners</h2>
+            <ul>
+                <li><a href="#">Sagar Ratna</a></li>
+                <li><a href="#">Tea Time</a></li>
+                <li><a href="#">EAT_INN</a></li>
+                <li><a href="#">Das@co</a></li>
+            </ul>
+        </div>
+        <div class="section about">
+            <h2>About</h2>
+            <ul>
+                <li><a href="#">Corporate Contact</a></li>
+                <li><a href="#">How We Work</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const franchiseVisits = JSON.parse(localStorage.getItem('franchiseVisits')) || {};
+
+// Convert visits data into an array and sort by visit count
+const sortedFranchises = Object.entries(franchiseVisits)
+    .map(([id, data]) => ({ id, ...data }))
+    .sort((a, b) => b.visits - a.visits)
+    .slice(0, 3); // Get top 3
+
+const container = document.querySelector('.franchise-boxes'); // Ensure this matches your container
+
+// Display top 3 trending franchises
+sortedFranchises.forEach(franchise => {
+    const franchiseData = JSON.parse(localStorage.getItem('franchiseData')); // Fetch data from localStorage
+    const franchiseBox = document.createElement('div');
+    franchiseBox.classList.add('franchise-box');
+    franchiseBox.innerHTML = `
+        <a href="franc1.html">
+            <img src="${franchiseData.imageSrc}" alt="${franchiseData.name}">
+            <h3>${franchiseData.name}</h3>
+            <p>Type: ${franchiseData.type}</p>
+            <p>Price: ${franchiseData.price}</p>
+        </a>
+    `;
+    container.appendChild(franchiseBox);
+});
+
+if (sortedFranchises.length === 0) {
+    container.innerHTML = '<p>No trending franchises available.</p>';
+}
+    </script>
+</body>
+</html>

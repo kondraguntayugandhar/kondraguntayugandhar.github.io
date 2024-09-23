@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise Details</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+        .header-bar {
+    background-color: #333;
+    color: white;
+    padding: 40px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+    text-decoration: underline;
+    color: rgb(8, 8, 8); /* Adjusted for better contrast */
+}
+
+h2 {
+    margin: 10px 0 0;
+    font-size: 15px;
+    color: rgb(165, 213, 219);
+}
+
+.footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-nav li {
+    margin: 0 15px;
+}
+
+.footer-nav a {
+    color: rgb(5, 5, 5); /* Link color */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover effect */
+}
+
+        .franchise-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            /*margin: auto;*/
+        }
+        .franchise-box img {
+            width: 250px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .franchise-box h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .franchise-box p {
+            color: #333;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar"></div>
+    <div class="header-container">
+        <div class="header-left">
+            <h1>FRANCHISE</h1>
+            <h2>COLLABORATE WITH US!</h2>
+        </div>
+        <ul class="footer-nav">
+            <li><a href="fran.html">Home</a></li>
+            <li><a href="franc1.html">Book Franchise</a></li>
+            <li><a href="franc2.html">Add Franchise</a></li>
+            <li><a href="#account">My profile</a></li>
+        </ul>
+    </div>
+    <div class="franchise-box" id="franchise-box">
+        <a href="franc3.html">
+            <img id="franchise-image" src="" alt="Franchise Image">
+            <h3 id="franchise-name"></h3>
+            <p id="franchise-type"></p>
+            <p id="franchise-price"></p>
+        </a>
+    </div>
+
+    <script>
+        const franchiseData = JSON.parse(localStorage.getItem('franchiseData'));
+
+if (franchiseData) {
+    document.getElementById('franchise-image').src = franchiseData.imageSrc;
+    document.getElementById('franchise-name').innerText = franchiseData.name;
+    document.getElementById('franchise-type').innerText = `Type: ${franchiseData.type}`;
+    document.getElementById('franchise-price').innerText = `Price: ${franchiseData.price}`;
+    document.getElementById('franchise-location').innerText = `Location: ${franchiseData.location}`;
+} else {
+    document.body.innerHTML = '<p>No franchise data available.</p>';
+}
+
+// Track visits
+const franchiseVisits = JSON.parse(localStorage.getItem('franchiseVisits')) || {};
+const franchiseId = 'franchise1';
+
+if (franchiseVisits[franchiseId]) {
+    franchiseVisits[franchiseId].visits += 1;
+} else {
+    franchiseVisits[franchiseId] = { visits: 1, ...franchiseData };
+}
+localStorage.setItem('franchiseVisits', JSON.stringify(franchiseVisits));
+    </script>
+</body>
+</html>
